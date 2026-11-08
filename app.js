@@ -1,5 +1,7 @@
 (function () {
   'use strict';
+  // 本番の画面（niseko-forum.github.io）以外はテスト版として動く（テスト用マスター・メールは事務局だけ）
+  var ENV = location.hostname === 'niseko-forum.github.io' ? '' : 'test';
   var API = 'https://script.google.com/macros/s/AKfycbw7_X7ussUPrxCZHx4gi3j-L-bxQcfNYPnGswowTk_kU9P81EXiEHn999GnzwYu861C/exec';
   var K = 'ATYSbKZLx7bkAPnDWDOg-MizwHodtzu5';
   var SKEY = 'niseko2027-s2';
@@ -12,7 +14,7 @@
 
   function api(action, payload, attempt) {
     attempt = attempt || 1;
-    var body = Object.assign({ action: action, k: K }, payload || {});
+    var body = Object.assign({ action: action, k: K }, ENV ? { env: ENV } : {}, payload || {});
     return fetch(API, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(body), redirect: 'follow', credentials: 'omit', cache: 'no-store' })
       .then(function (r) { return r.text(); })
       .then(function (t) {
