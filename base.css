@@ -46,7 +46,22 @@ textarea{min-height:84px;resize:vertical}
 .wait .left{color:var(--warn)}
 .fb{border:1px dashed var(--warn);border-radius:6px;padding:8px 10px;display:flex;flex-direction:column;gap:8px}
 .fb .ql{color:var(--warn)}
-.meals{display:grid;grid-template-columns:1fr auto auto;gap:6px 12px;align-items:center}
+.meals{display:grid;grid-template-columns:1fr auto auto auto;gap:6px 10px;align-items:center}
+.meals label .s,.fa-row .s{display:block;font-size:.8rem;color:var(--muted)}
+.fee{font-size:.78rem;color:var(--muted);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+#famBox h3.sub{font-size:1rem;color:var(--accent);margin:18px 0 4px;padding-bottom:3px;border-bottom:1px solid var(--line)}
+.fa-day{border:1px solid var(--line);border-radius:6px;padding:8px 10px;margin:8px 0}
+.fa-h{display:block;font-weight:700;font-size:.92rem;margin-bottom:4px}
+.fa-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;align-items:center;margin:6px 0}
+.fa-row .fee{grid-column:1;grid-row:2;text-align:left}
+.fa-row .fee:empty{display:none}
+.fa-row select.cnt{grid-column:2;grid-row:1}
+.fa-row select.fa-act{width:100%;min-width:0}
+.fa-add{font-size:.88rem;margin-top:2px}
+select.cnt{width:4.4em;padding:6px 4px;font-size:.95rem}
+.meals{grid-template-columns:minmax(0,1fr) auto auto auto}
+.meals .mh{text-align:center;line-height:1.25}
+.meals label{line-height:1.35}
 .meals .mh{font-size:12px;color:#5b6475}
 .q.lunch{border-top:1px dashed #c9d1dd;padding-top:10px;margin-top:10px}
 .meals select{width:auto}
@@ -115,3 +130,6 @@ input.code{font-size:1.4rem;letter-spacing:.3em;font-variant-numeric:tabular-num
 .block{border-left:3px solid var(--accent);padding-left:12px;display:flex;flex-direction:column;gap:14px}
 .opt.act .left.sel{font-weight:700}
 .opt.act .left{white-space:nowrap}
+
+.lunch.off .opt{opacity:.5;cursor:not-allowed}
+.lunch-opt .left{font-weight:400;color:var(--muted)}
