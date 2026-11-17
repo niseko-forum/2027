@@ -491,6 +491,8 @@
       : (res.mailed_to.length ? '同じ内容を、' + res.mailed_to.join('、') + ' にメールでお送りしました。' : '');
     $('forumBox').hidden = !res.forum;
     if (res.forum) $('forumLink').href = res.forum;
+    $('introBox').hidden = !res.intro;
+    if (res.intro) $('introLink').href = res.intro;
     var r = st.me, ev = [];
     r.me.days.forEach(function (k) {
       var d = r.dayDefs.filter(function (x) { return x.key === k; })[0], a = r.acts.filter(function (x) { return x.id === res.answer[k]; })[0];
